@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
+import Logo from '../assets/net (1).png'
 
 const Navbar = () => {
   const { user, logOut } = UserAuth();
@@ -17,11 +18,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex items-center justify-between p-4 z-[100] w-full absolute'>
+    <div className='flex items-center justify-between p-6 z-[100] w-full absolute'>
       <Link to='/'>
-        <h1 className='text-red-600 text-4xl font-bold cursor-pointer'>
+        <img className='w-40 mx-3' src={Logo} alt="logo" />
+        {/* <h1 className='text-red-600 text-4xl font-bold cursor-pointer'>
           NETFLIX
-        </h1>
+        </h1> */}
       </Link>
       {user?.email ? (
         <div>
